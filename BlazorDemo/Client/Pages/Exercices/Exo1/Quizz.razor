@@ -1,0 +1,29 @@
+﻿@page "/quizz"
+<h3>Quizz</h3>
+@if (!IsQuizzFinished)
+{
+    @if (string.IsNullOrWhiteSpace(Username))
+    {
+        <p>
+            Entrez un nom : <input type="text" @bind="Username" />
+        </p>
+    }
+    else
+    {
+        <Questions Username="@Username"
+               NotifyResponse="AjoutReponse"
+               NotifyEndGame="FinishQuizz"
+        />
+    }
+}
+else {
+    @foreach (string r in Reponses)
+    {
+        <p>@r</p>
+    }
+
+    <p>Merci d'avoir participer</p>
+}
+@code {
+
+}

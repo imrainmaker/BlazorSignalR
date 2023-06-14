@@ -1,0 +1,20 @@
+﻿@page "/demo5"
+<h3>Formulaire</h3>
+
+<EditForm Model="MyStudent" OnValidSubmit="OnSubmit">
+    <DataAnnotationsValidator />
+    <p> Prénom : <InputText @bind-Value="MyStudent.Firstname" />    
+    </p>
+    <p> Nom : <InputText @bind-Value="MyStudent.Lastname" /></p>
+    <p> Email : <InputText @bind-Value="MyStudent.Email" />
+        <ValidationMessage For="() => MyStudent.Email"></ValidationMessage> 
+    </p>
+    <p> Note : <InputNumber @bind-Value="MyStudent.YearResult" /></p>
+
+    <button>Valider</button>
+    <ValidationSummary />
+</EditForm>
+
+@code {
+
+}

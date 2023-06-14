@@ -1,0 +1,15 @@
+﻿@page "/demo2"
+<h3>Demo2</h3>
+@if(ReponseDeEnfant is not null) {
+    <p>Réponse : @ReponseDeEnfant</p>
+}
+<div style="border: black solid 2px;">
+    <Enfant TextFromParent="@MyText" 
+            MaReponse="RecevoirReponse"
+        />
+</div>
+
+
+@code {
+
+}

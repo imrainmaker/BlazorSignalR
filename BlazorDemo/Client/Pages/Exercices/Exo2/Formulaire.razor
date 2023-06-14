@@ -1,0 +1,17 @@
+﻿<h3>Ajout d'un jeu</h3>
+<EditForm Model="MyForm" OnValidSubmit="Submit">
+    <DataAnnotationsValidator />
+    <p>Titre : <InputText @bind-Value="MyForm.Titre" />
+       <ValidationMessage For="() => MyForm.Titre" />
+    </p>
+    <p>Année de sortie : <InputNumber @bind-Value="MyForm.DateDeSortie" /> </p>
+    <p>Genre : <InputText @bind-Value="MyForm.Genre" /></p>
+    <p>Note : <InputNumber @bind-Value="MyForm.Note" />
+       <ValidationMessage For="() => MyForm.Note"></ValidationMessage>
+    </p>
+
+    <button class="btn-outline-success">Valider</button>
+</EditForm>
+@code {
+
+}

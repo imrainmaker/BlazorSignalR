@@ -1,0 +1,17 @@
+﻿@page "/demo7"
+<h3>Demo7</h3>
+
+<p>Username : <input @bind-value="User" /></p>
+<p>Message : <input @bind-value="Message" /></p>
+<button @onclick="Send">Envoyer</button>
+
+<ul>
+    @foreach (Message m in MessageList)
+    {
+        <li>@m.user : @m.message</li>
+    }
+</ul>
+
+@code {
+
+}

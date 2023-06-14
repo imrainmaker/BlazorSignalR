@@ -1,0 +1,23 @@
+﻿@inject NavigationManager nvm
+<div class="card w-25">
+    <div class="card-body">
+        <h5 class="card-header"> @Produit.Name</h5>
+        <p class="card-text"> @Produit.Description</p>
+        <div class="align-content-center">@Produit.Price €</div>
+        <div class="card-footer">
+            <button class="btn btn-primary" @onclick="()=>{ GoToDetails(Produit.Id); } ">Details</button>
+            <button class="btn btn-secondary" onclick="window.location.href='/Details/@Produit.Id'">Details</button>
+        </div>
+    </div>
+</div>
+
+@code {
+    [EditorRequired] /*Le paramètre est obligatoire lors de l'appel du component sous pein d'avoir un warning*/
+    [Parameter] /*Définir en In et Out notre paramètre*/
+    public Product Produit { get; set; }     
+
+    private void GoToDetails(Guid Pid)
+    {
+        nvm.NavigateTo($"/Details/{Pid}", false);
+    }
+}

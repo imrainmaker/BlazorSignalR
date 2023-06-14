@@ -1,0 +1,40 @@
+﻿@page "/demo6"
+<h3>Demo6</h3>
+
+<NavLink href="demo6ter/3">Click ici</NavLink>
+
+<h4>@Message</h4>
+
+<button @onclick="SimulateRender">Click ici</button>
+
+<hr />
+<input @bind-value="Value" type="number" />
+<Demo6Bis ValueFromParent="Value" />
+@code {
+    public int Value { get; set; }
+    public string Message { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Message = "Affectation à l'initialisation";
+        Console.WriteLine("OnInit");
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if(firstRender)
+            Message = "Affectation après le rendu N° 1";
+        else {
+            Message = "Affection après les autres rendus";
+        }
+    }
+
+    public Demo6()
+    {
+        Console.WriteLine("Constructeur");
+    }
+
+    private void SimulateRender() {
+        Console.WriteLine("toto");
+    }
+}

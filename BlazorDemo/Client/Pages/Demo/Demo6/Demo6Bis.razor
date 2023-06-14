@@ -1,0 +1,15 @@
+﻿<h3>Demo6Bis</h3>
+
+<p>Du parent : @ValueFromParent</p>
+<p>Modifié : @ModifiedValue</p>
+@code {
+    [Parameter]
+    public int ValueFromParent { get; set; }
+
+    public int ModifiedValue { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        ModifiedValue = ValueFromParent * 2;
+    }
+}

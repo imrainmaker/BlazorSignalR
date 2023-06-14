@@ -1,0 +1,90 @@
+﻿<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">BlazorDemo</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="counterStrike">
+                <span class="oi oi-plus" aria-hidden="true"></span> Counter Strike
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="fetchdata">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="ListeDeProduits">
+                <span class="oi oi-basket" aria-hidden="true"></span> Mes produits
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="demo1">
+                <span class="oi oi-basket" aria-hidden="true"></span> Bindings
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="demo2">
+                <span class="oi oi-basket" aria-hidden="true"></span> Parent/Enfant
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="demo3">
+                <span class="oi oi-basket" aria-hidden="true"></span> Virtualisation
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="demo4">
+                <span class="oi oi-basket" aria-hidden="true"></span> JS Interop
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="demo5">
+                <span class="oi oi-basket" aria-hidden="true"></span> Formulaire
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="demo6">
+                <span class="oi oi-basket" aria-hidden="true"></span> Lifecycle
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="demo7">
+                <span class="oi oi-basket" aria-hidden="true"></span> Chat
+            </NavLink>
+        </div>
+        <hr />
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="quizz">
+                <span class="oi oi-basket" aria-hidden="true"></span> Quizz
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="exo2">
+                <span class="oi oi-basket" aria-hidden="true"></span> Game List
+            </NavLink>
+        </div>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

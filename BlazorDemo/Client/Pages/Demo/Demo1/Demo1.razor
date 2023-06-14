@@ -1,0 +1,14 @@
+﻿@page "/demo1"
+<h3>Demo1</h3>
+
+<p>@MyValue</p> @*Binding ONE WAY => Lecture de propriété*@
+<input @bind-value="MyValue" /> @*Binding TWO WAYS => Lecture/écriture*@
+
+<button @onclick="AddValue">Ajouter</button>  @*Event binding*@
+<button @onclick="() => AddValue(42)" disabled="@(MyValue != 5)">Ajouter 42</button>
+
+
+
+@code {
+
+}

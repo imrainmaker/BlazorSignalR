@@ -1,0 +1,39 @@
+﻿@page "/demo3"
+<h3>Demo3</h3>
+<h4>Avec un foreach</h4>
+<div style="max-height : 200px; overflow : scroll;">
+    <ul>
+        @foreach (Item item in ItemList)
+        {
+            <li>@item.Id - @item.Content</li>
+        }
+    </ul>
+</div>
+<hr />
+<h4>Avec Virtualize</h4>
+<div style="max-height : 200px; overflow : scroll;">
+
+    <ul>
+        <Virtualize Context="item" Items="ItemList">
+            <li>@item.Id - @item.Content</li>
+        </Virtualize>
+    </ul>
+</div>
+
+
+@code {
+    public List<Item> ItemList { get; set; }
+
+    public Demo3()
+    {
+        ItemList = new List<Item>();
+        for (int i = 1; i < 51; i++)
+        {
+            ItemList.Add(new Item
+                {
+                    Id = i,
+                    Content = Guid.NewGuid().ToString()
+                });
+        }
+    }
+}

@@ -1,0 +1,23 @@
+﻿@page "/exo2"
+<h3>Exo2</h3>
+<div style="border: 2px black solid;">
+    <Virtualize Context="g" Items="Games">
+        <div style="border: 2px solid grey">
+            <a @onclick="() => SelectGame(g.Id)">@g.Titre</a>
+        </div>
+    </Virtualize>
+</div>
+
+<div style="border: 2px black solid; ">
+    <Formulaire NotifyNewGame="AddGame" />
+</div>
+
+@if(SelectedGame > 0) {
+    <div style="border: 2px black solid; ">
+        <Detail CurrentId="SelectedGame" />
+    </div>
+}
+
+@code {
+
+}

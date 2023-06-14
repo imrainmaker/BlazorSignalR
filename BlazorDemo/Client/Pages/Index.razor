@@ -1,0 +1,17 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<label class="form-label">Votre nom</label>
+<input type="text" @bind="@Nom" /> <!-- Je fais en sorte que la value de mon textbox = Nom + modification automatique de cette variable sur le onChange-->
+<label>@Nom</label>
+<SurveyPrompt Title="How is Blazor working for you?" Nom="@Nom" />
+
+@code
+{
+    private string Nom { get; set; } = "Bernard";
+}
