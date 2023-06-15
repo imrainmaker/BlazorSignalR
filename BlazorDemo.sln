@@ -9,6 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorDemo.Client", "Blazor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorDemo.Shared", "BlazorDemo\Shared\BlazorDemo.Shared.csproj", "{F9E12978-07FD-4C07-BB2B-B65F3B02DE01}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Éléments de solution", "Éléments de solution", "{03547A7B-C4D8-4652-BF5C-68DB4F5376BC}"
+	ProjectSection(SolutionItems) = preProject
+		BlazorDemo\Dockerfile = BlazorDemo\Dockerfile
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
