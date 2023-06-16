@@ -22,7 +22,7 @@ namespace BlazorDemo.Client.Pages.Exercices.Exo2
             MyHub = new HubConnectionBuilder()
                 .WithUrl(new Uri("https://localhost:7275/chathub")).Build();
 
-            MyHub.On("ListUpdated", async () =>
+            MyHub.On("newGameList", async () =>
             {
                 await RefreshList();
                 StateHasChanged();
